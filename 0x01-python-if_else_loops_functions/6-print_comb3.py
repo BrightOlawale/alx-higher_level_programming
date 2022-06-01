@@ -6,4 +6,4 @@ for i in range(10):
         if i < 8:
             print("{}{}".format(i, k), end=", ")
         else:
-            print("{}{}\n".format(i, k))
+            print("{}{}\n".format(i, k), end="")
