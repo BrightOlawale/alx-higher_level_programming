@@ -5,7 +5,7 @@ if __name__ == "__main__":
     vc = len(argv)
     if vc <= 2:
         if vc == 1:
-            print("{} argument.".format(0))
+            print("{} arguments.".format(0))
         else:
             print("{} argument:".format((vc-1)))
             print("{}: {}".format((vc-1), argv[vc-1]))
