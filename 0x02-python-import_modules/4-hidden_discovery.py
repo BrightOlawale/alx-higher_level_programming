@@ -5,4 +5,3 @@ if __name__ == "__main__":
     for j in dir(hd):
         if "__" not in j:
             print(j)
-
