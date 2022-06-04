@@ -8,4 +8,4 @@ def element_at(my_list, idx):
     elif idx > (lc-1):
         return None
     else:
-        print("{}".format(my_list[idx]))
+        print("{:d}".format(my_list[idx]))
