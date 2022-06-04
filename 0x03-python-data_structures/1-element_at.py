@@ -3,9 +3,7 @@
 
 def element_at(my_list, idx):
     lc = len(my_list)
-    if idx < 0:
-        return None
-    elif idx > (lc-1):
+    if idx < 0 or idx > (lc-1):
         return None
     else:
-        print("{:d}".format(my_list[idx]))
+        return (my_list[idx])
