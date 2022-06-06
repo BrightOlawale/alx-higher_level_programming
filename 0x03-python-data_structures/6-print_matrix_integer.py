@@ -3,6 +3,8 @@
 
 def print_matrix_integer(matrix=[[]]):
     for row in matrix:
-        for col in row:
+        for idx, col in enumerate(row):
             print("{:d}".format(col), end=" ")
+            if idx < len(row):
+                print("{}".format(" "), end=" ")
         print()
