@@ -7,15 +7,18 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
+        a = argv[1]
+        b = argv[3]
+        c = argv[2]
         ops = ["+", "-", "*", "/"]
         func = [
-         (add(int(argv[1]), int(argv[3]))),
-         (sub(int(argv[1]), int(argv[3]))),
-         (mul(int(argv[1]), int(argv[3]))),
-         (div(int(argv[1]), int(argv[3])))]
-        if argv[2] not in ops:
+         (add(int(a), int(b))),
+         (sub(int(a), int(b))),
+         (mul(int(a), int(b))),
+         (div(int(a), int(b)))]
+        if c not in ops:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
         for i in range(len(ops)):
             if argv[2] == ops[i]:
-                print("{} + {} = {}".format(argv[1], argv[3], func[i]))
+                print("{} + {} = {}".format(a, b, func[i]))
