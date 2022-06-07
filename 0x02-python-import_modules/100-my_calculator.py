@@ -22,4 +22,4 @@ if __name__ == "__main__":
             exit(1)
         for i in range(len(ops)):
             if argv[2] == ops[i]:
-                print("{} + {} = {}".format(a, b, func[i]))
+                print("{} {} {} = {}".format(a, c, b, func[i]))
