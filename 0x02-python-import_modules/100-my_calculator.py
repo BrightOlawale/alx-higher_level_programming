@@ -8,8 +8,11 @@ if __name__ == "__main__":
         exit(1)
     else:
         ops = ["+", "-", "*", "/"]
-        func = [(add(int(argv[1]), int(argv[3]))), (sub(int(argv[1]), 
-        int(argv[3]))), (mul(int(argv[1]), int(argv[3]))), (div(int(argv[1]), int(argv[3])))]
+        func = [
+         (add(int(argv[1]), int(argv[3]))),
+         (sub(int(argv[1]), int(argv[3]))),
+         (mul(int(argv[1]), int(argv[3]))),
+         (div(int(argv[1]), int(argv[3])))]
         if argv[2] not in ops:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
