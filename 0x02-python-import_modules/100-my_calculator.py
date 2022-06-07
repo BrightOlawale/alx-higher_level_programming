@@ -19,4 +19,3 @@ if __name__ == "__main__":
         for i in range(len(ops)):
             if argv[2] == ops[i]:
                 print("{} + {} = {}".format(argv[1], argv[3], func[i]))
-                exit(0)
