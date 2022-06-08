@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-alph = "abcdefghijklmnopqrstuvwxyz"
-print(alph.upper())
+import string
+print(string.ascii_uppercase)
