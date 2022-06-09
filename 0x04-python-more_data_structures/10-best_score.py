@@ -1,4 +1,4 @@
-#!/usr/bin/pthon3
+#!/usr/bin/python3
 def best_score(a_dictionary):
     count = 0
     maxim = []
