@@ -4,7 +4,5 @@
 
 class Square:
     '''Instantiation with size (no type/value verification)'''
-    __size = 0
-    def __init__(self, __size):
-        self._size = __size
-    pass
+    def __init__(self, size):
+        self.__size = size
