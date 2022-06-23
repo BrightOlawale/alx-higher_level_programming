@@ -12,8 +12,8 @@ class Square:
         '''Initialization of instance attributes
             size(int): 0 or positive integer
         '''
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         '''parsing value to calculate area
