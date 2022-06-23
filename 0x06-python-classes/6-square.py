@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-'''Defining a square'''
-
-
-class Square:
-    '''A class Square that defines a square by: (based on 5-square.py)'''
+'''A class Square that defines a square by: (based on 5-square.py)'''
 
 
 class Square:
@@ -27,11 +23,11 @@ class Square:
         '''
         if self.__size == 0:
             print()
-            return
-        for line in range(self.__position[1]):
-            print()
-        for col in range(self.__size):
-            print("{}{}".format(" "*self.__position[0], "#"*self.__size))
+        else:
+            for line in range(self.__position[1]):
+                print()
+            for col in range(self.__size):
+                print("{}{}".format(" "*self.__position[0], "#"*self.__size))
 
     @property
     def size(self):
