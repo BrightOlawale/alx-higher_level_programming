@@ -31,7 +31,7 @@ class Square:
             for line in range(self.__position[1]):
                 print()
             for col in range(self.__size):
-                print("{}{}".format("_"*self.__position[0],"#"*self.__size), end="")
+                print("{}{}".format(" "*self.__position[0],"#"*self.__size), end="")
                 print()
 
     @property
