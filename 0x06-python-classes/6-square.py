@@ -31,8 +31,7 @@ class Square:
             for line in range(self.__position[1]):
                 print()
             for col in range(self.__size):
-                print("{}{}".format(" "*self.__position[0],"#"*self.__size), end="")
-                print()
+                print("{}{}".format(" "*self.__position[0], "#"*self.__size))
 
     @property
     def size(self):
@@ -48,14 +47,16 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
     @property
     def position(self):
         return self.__position
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2:
-            if not isinstance(value[0], int) or not isinstance(value[1], int):
-                if value[0]>= 0 and value[1]>=0:
-                    raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        if isinstance(value, tuple) or len(value) == 2:
+            if isinstance(value[0], int) or isinstance(value[1], int):
+                if value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
+                    return
+        raise TypeError("position must be a tuple of 2 positive integers")
