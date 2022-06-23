@@ -50,8 +50,8 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if isinstance(value, tuple) or len(value) == 2:
-            if isinstance(value[0], int) or isinstance(value[1], int):
+        if isinstance(value, tuple) and len(value) == 2:
+            if isinstance(value[0], int) and isinstance(value[1], int):
                 if value[0] >= 0 and value[1] >= 0:
                     self.__position = value
                     return
