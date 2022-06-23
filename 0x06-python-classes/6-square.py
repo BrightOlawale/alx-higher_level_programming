@@ -27,11 +27,11 @@ class Square:
         '''
         if self.__size == 0:
             print()
-        else:
-            for line in range(self.__position[1]):
-                print()
-            for col in range(self.__size):
-                print("{}{}".format(" "*self.__position[0], "#"*self.__size))
+            return
+        for line in range(self.__position[1]):
+            print()
+        for col in range(self.__size):
+            print("{}{}".format(" "*self.__position[0], "#"*self.__size))
 
     @property
     def size(self):
