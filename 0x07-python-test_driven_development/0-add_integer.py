@@ -9,9 +9,9 @@ def add_integer(a, b=98):
     """
         A function  to add two numbers.
     """
-    if not isinstance(a, (int, float)):
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    elif not isinstance(b, (int, float)):
+    elif type(b) not in [int, float]:
         raise TypeError("b must be an integer")
     else:
         a, b = int(a), int(b)
