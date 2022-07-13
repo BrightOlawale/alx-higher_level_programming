@@ -68,5 +68,4 @@ class Rectangle(Base):
     def display(self):
         """display function"""
         for col in range(self.__height):
-            print("{:s}".format("#"* self.__width), end="")
-        print()
+            print("{:s}".format("#" * self.__width))
