@@ -78,27 +78,36 @@ class Rectangle(Base):
                                                        self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update function"""
-        if len(args) is 0:
-            return
-        if len(args) is 1:
-            self.id = args[0]
-        if len(args) is 2:
-            self.id = args[0]
-            self.width = args[1]
-        if len(args) is 3:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-        if len(args) is 4:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-        if len(args) is 5:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+        i = 0
+        if len(args) > 0:
+            for idx in args:
+                if i == 0:
+                    self.__id = idx
+                elif i == 1:
+                    self.__width = idx
+                elif i == 2:
+                    self.__height = idx
+                elif i == 3:
+                    self.__x = idx
+                elif i == 4:
+                    self.__y = idx
+                else:
+                    break
+                i += 1
+        else:
+
+            for idx in kwargs:
+                if idx == "id":
+                    self.__id = kwargs[idx]
+                elif idx == "width":
+                    self.__width = kwargs[idx]
+                elif idx == "height":
+                    self.__height = kwargs[idx]
+                elif idx == "x":
+                    self.__x = kwargs[idx]
+                elif idx == "y":
+                    self.__y = kwargs[idx]
+                else:
+                    break
