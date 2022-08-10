@@ -1,2 +1,2 @@
---  inserts a new row in the table first_table in your MySQL server.
-ALTER INTO first_table (`id`, `name`) VALUES (89, "Best School");
+-- inserts a new row
+INSERT INTO first_table (`id`, `name`) VALUES (89, 'Best School');
