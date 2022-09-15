@@ -13,6 +13,7 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states WHERE name='{:s}' ORDER BY id ASC".format(sys.argv[4]))
     results = cur.fetchall()
     for result in results:
-        print(result)
+        if (result == sys.argv[4]):
+            print(result)
     cur.close()
     db.close()
