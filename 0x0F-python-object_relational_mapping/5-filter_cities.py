@@ -15,8 +15,6 @@ if __name__ == "__main__":
     cities_list = []
     for row in rows:
         cities_list.append(row[0])
-    for row in cities_list:
-        print(row, end=", ")
-    print()
+    print(', '.join(cities_list))
     cur.close()
     db.close()
