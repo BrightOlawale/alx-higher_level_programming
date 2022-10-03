@@ -14,6 +14,7 @@ if __name__ == "__main__":
                     ORDER BY id ASC".format(sys.argv[4]))
     results = cur.fetchall()
     for result in results:
-        print(result)
+        if result[1] == sys.argv[4]:
+            print(result)
     cur.close()
     db.close()
