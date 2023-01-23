@@ -1,10 +1,11 @@
 #!/usr/bin/node
 
-imported = require('./101-data.js').dict;
-const dictN = {};
-for (const [key, value] in Object.entries(imported)) {
-  dictN[value].push(key);
+const dict = require('./101-data').dict;
+
+const newDict = {};
+
+for (const [key, value] of Object.entries(dict)) {
+  newDict[value] ? newDict[value].push(key) : newDict[value] = [key];
 }
 
-console.log(dictN);
-    
+console.log(newDict);
