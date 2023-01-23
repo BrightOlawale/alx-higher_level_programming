@@ -1,27 +1,23 @@
 #!/usr/bin/python3
-""" retrieves all cities and states """
+"""prints all City objects from the database hbtn_0e_14_usa:"""
+
+import sys
+from model_state import Base, State
+from model_city import City
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    import sys
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
-    from model_state import State, Base
-    from model_city import City
-
-    # open a connection
-    engine = create_engine('mysql+mysqldb://'
-                           '{0.argv[1]}:{0.argv[2]}@localhost/{0.argv[3]}'
-                           .format(sys))
-
-    # send city schema to create or update table in db
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2],
+                                   sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    # use connection
     Session = sessionmaker(bind=engine)
-    session = Session()  # session instance
-
-    # using join to retrieve city and state
-    sn = State.name
-    si = State.id
-    cs = City.state_id
-    for city, state in session.query(City, sn).join(State, si == cs):
-        print("{1}: ({0.id}) {0.name}".format(city, state))
+    session = Session()
+    states = session.query(State, City)\
+        .filter(City.state_id == State.id)\
+        .order_by(City.id).all()
+    for state, city in states:
+        print(f'{state.name}: ({city.id}) {city.name}')
+    session.close()
+    
