@@ -20,4 +20,3 @@ if __name__ == "__main__":
     for state, city in states:
         print(f'{state.name}: ({city.id}) {city.name}')
     session.close()
-    
