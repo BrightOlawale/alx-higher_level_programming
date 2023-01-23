@@ -1,4 +1,8 @@
 #!/usr/bin/node
-imported  = require( './100-data.js' ) ;
-console.log ( imported.list ) ;
-console.log ( imported.list.map(( x ,  i )  =>  x  *  i )) ;
+
+const list = require('./100-data').list;
+
+const newList = list.map((num, index) => num * index);
+
+console.log(list);
+console.log(newList);
