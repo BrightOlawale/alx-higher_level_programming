@@ -2,10 +2,14 @@
 
 const dict = require('./101-data').dict;
 
-const newDict = {};
+const newDictOccurence = {};
 
 for (const [key, value] of Object.entries(dict)) {
-  newDict[value] ? newDict[value].push(key) : newDict[value] = [key];
+  if (newDictOccurence[value]) {
+    newDictOccurence[value].push(key);
+  } else {
+    (newDictOccurence[value] = [key]);
+  }
 }
 
-console.log(newDict);
+console.log(newDictOccurence);
