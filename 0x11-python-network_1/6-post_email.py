@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""what's my status"""
+"""  displays the value of the X-Request-Id variable
+    found in the header of the response
+"""
 import requests
 import sys
 
 
-def myEmailR(args, email):
-    """what's my status"""
-    data = {'email': email}
-    x = requests.post(args, data=data)
-    print("{}".format(x.text))
-
 if __name__ == "__main__":
-    myEmailR(sys.argv[1], sys.argv[2])
+    url = sys.argv[1]
+    response = requests.post(url, data={'email': sys.argv[2]})
+    print(response.text)

@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-"""#7"""
-from sys import argv
+"""  displays the value of the X-Request-Id variable
+    found in the header of the response
+"""
 import requests
+import sys
 
-
-def Eerror():
-    """ function
-    """
-    result = requests.get(argv[1])
-    if result.status_code > 400:
-        print("Error code: {}".format(result.status_code))
-    else:
-        print(result.text)
 
 if __name__ == "__main__":
-    Eerror()
+    url = sys.argv[1]
+    response = requests.get(url)
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
+    else:
+        print(response.text)

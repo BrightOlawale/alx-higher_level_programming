@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""what's my status"""
+"""  displays the value of the X-Request-Id variable
+    found in the header of the response
+"""
 import requests
 import sys
 
 
-def myReque(arg):
-    """what's my status"""
-    x = requests.get(arg)
-    print("{}".format(x.headers.get('X-Request-Id')))
-
 if __name__ == "__main__":
-    myReque(sys.argv[1])
+    url = sys.argv[1]
+    response = requests.get(url)
+    print(response.headers.get('X-Request-Id'))

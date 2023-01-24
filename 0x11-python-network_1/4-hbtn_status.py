@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-"""#4"""
+""" Python script that fetches https://alx-intranet.hbtn.io/status """
 import requests
 
 
-def myFirstRequest():
-    """My requests"""
-    x = requests.get('https://intranet.hbtn.io/status')
-    print("Body response:")
-    print("\t- type: {}".format(type(x.text)))
-    print("\t- content: {}".format(x.text))
-
 if __name__ == "__main__":
-    myFirstRequest()
+    response = requests.get("https://alx-intranet.hbtn.io/status")
+    print("Body response:")
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
