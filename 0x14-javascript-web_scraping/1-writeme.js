@@ -4,8 +4,8 @@ const fs = require('fs');
 const file = process.argv[2];
 const input = process.argv[3];
 
-fs.writeFile(file, input, (err) => {
-  if (err) {
-    console.log(err);
+fs.writeFile(file, input, 'utf-8', function(err){
+  if (err){
+    console.error(err);
   }
-});
+})
