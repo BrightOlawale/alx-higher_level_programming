@@ -2,6 +2,7 @@
 
 const list = require('./100-data').list;
 
-const mappedList = list.map((current, index) => current * index);
+const newList = list.map((num, index) => num * index);
+
 console.log(list);
-console.log(mappedList);
+console.log(newList);
