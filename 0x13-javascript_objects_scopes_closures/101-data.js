@@ -1,10 +1,11 @@
 #!/usr/bin/node
 
-exports.dict = {
-    89: 1,
-    90: 2,
-    91: 1,
-    92: 3,
-    93: 1,
-    94: 2
-  };
+const dict = require('./101-data').dict;
+
+const newDict = {};
+
+for (const [key, value] of Object.entries(dict)) {
+  newDict[value] ? newDict[value].push(key) : newDict[value] = [key];
+}
+
+console.log(newDict);
